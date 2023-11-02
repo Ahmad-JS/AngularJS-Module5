@@ -1,0 +1,59 @@
+<div class="container">
+    <div style="display: flex; justify-content: center; width: 100%;">
+        <form class="form-control bg-info" style="background-color: #61122f; color: white; width: 500px; height:auto; padding: 30px; border-radius: 10px;" name="signupForm">
+            <h1 style="display: flex; justify-content: center; width: 100%; font-weight: 600; letter-spacing: .5px;">SIGN UP</h1>
+            <div style="margin-bottom: 15px;">
+                <label>Firstname</label>
+                <input type="text" class="form-control" name="firstname" ng-model="user.firstname" ng-required="true" />
+                <div ng-show="signupForm.firstname.$touched && signupForm.firstname.$invalid">
+                    <small style="color: red;">
+                        Firstname is required
+                    </small>
+                </div>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label>Lastname</label>
+                <input type="text" class="form-control" name="lastname" ng-model="user.lastname" ng-required="true" />
+                <div ng-show="signupForm.lastname.$touched && signupForm.lastname.$invalid">
+                    <small style="color: red;">
+                        Lastname is required
+                    </small>
+                </div>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" ng-model="user.email" ng-required="true" />
+                <div ng-show="signupForm.email.$touched && signupForm.email.$invalid">
+                    <small style="color: red;">
+                        Email is required
+                    </small>
+                </div>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label>Contact Number</label>
+                <input type="text" class="form-control" name="contact" ng-model="user.contact" ng-required="true" />
+                <div ng-show="signupForm.contact.$touched && signupForm.contact.$invalid">
+                    <small style="color: red;">
+                        Contact number is required
+                    </small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="favoriteDish">Favorite Dish:</label>
+                <input type="text" class="form-control" name="favoriteDish" ng-model="user.favoriteDish" ng-required="true">
+                <div ng-show="signupForm.favoriteDish.$touched && signupForm.favoriteDish.$invalid">
+                  <small style="color: red;">
+                    Favorite dish is required.
+                  </small>
+                </div>
+                <div ng-show="favoriteDishError" style="color: red;">
+                  {{ favoriteDishError }}
+                </div>
+              </div>
+              
+            <div style="display: flex; justify-content: center; width: 100%;">
+                <button type="submit" class="btn btn-primary" ng-disabled="signupForm.$invalid" ng-click="submitForm()">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

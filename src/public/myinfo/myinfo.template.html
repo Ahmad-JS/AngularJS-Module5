@@ -1,0 +1,24 @@
+<div class="container">
+    <div style="display: flex; justify-content: center; width: 100%;">
+      <div style="background-color: #f6b319; width: 500px; padding: 20px; border-radius: 10px;">
+        <h1 style="display: flex; justify-content: center; width: 100%; font-weight: 600; letter-spacing: .5px;color: #61122f;">MY INFO</h1>
+        <div ng-if="$ctrl.userInfo" style="color: #61122f;">
+          <div style="display: flex; justify-content: center; width: 100%;">
+          <img class="img-responsive" width="250" height="150" ng-src="images/menu/{{$ctrl.categoryCode}}/{{$ctrl.favoriteDishItem.short_name}}.jpg" alt="{{$ctrl.favoriteDishItem.name}}">
+          </div>
+          <br>
+          <p><strong>First Name:</strong> {{ $ctrl.userInfo.firstname }}</p>
+          <p><strong>Last Name:</strong> {{ $ctrl.userInfo.lastname }}</p>
+          <p><strong>Email:</strong> {{ $ctrl.userInfo.email }}</p>
+          <p><strong>Contact Number:</strong> {{ $ctrl.userInfo.contact }}</p>
+          <p ng-if="$ctrl.favoriteDishItem"><strong>Favorite Dish:</strong> {{ $ctrl.favoriteDishItem.name }}</p>
+          <p ng-if="$ctrl.favoriteDishItem"><strong>Description:</strong> {{ $ctrl.favoriteDishItem.description }}</p>
+          
+        </div>
+        <div ng-if="!$ctrl.userInfo" style="display: flex; justify-content: center; width: 100%;color: #61122f;">
+          Not Signed Up Yet. <a ui-sref="signup">Sign up Now!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
